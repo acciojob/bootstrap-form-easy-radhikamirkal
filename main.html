@@ -11,108 +11,77 @@
 </head>
 <body>
 
-<div class="container mt-5">
+<form class="needs-validation" novalidate>
+  <h3 class="text-center mb-4">Internship Form</h3>
 
-  <h2 class="text-center mb-4">Internship Form</h2>
-
-  <form class="row g-3 needs-validation" novalidate>
-
-    <!-- First Name -->
-    <div class="col-md-4">
+  <div class="row mb-3">
+    <div class="col">
       <label class="form-label">First Name</label>
-      <input type="text" id="first-name-input" class="form-control" required>
-      <div class="invalid-feedback">
-        First name required!
-      </div>
+      <input type="text" class="form-control" id="first-name-input" required>
+      <div class="invalid-feedback">First name required!</div>
     </div>
 
-    <!-- Last Name -->
-    <div class="col-md-4">
+    <div class="col">
       <label class="form-label">Last Name</label>
-      <input type="text" id="last-name-input" class="form-control" required>
-      <div class="invalid-feedback">
-        Last name required!
-      </div>
+      <input type="text" class="form-control" id="last-name-input" required>
+      <div class="invalid-feedback">Last name required!</div>
     </div>
 
-    <!-- Email -->
-    <div class="col-md-4">
+    <div class="col">
       <label class="form-label">Email Address</label>
-      <input type="email" id="email-input" class="form-control" placeholder="xyz@abc.com" required>
-      <div class="invalid-feedback">
-        Email required!
-      </div>
+      <input type="email" class="form-control" id="email-input" required>
+      <div class="invalid-feedback">Email required!</div>
     </div>
+  </div>
 
-    <!-- College -->
-    <div class="col-md-6">
+  <div class="row mb-3">
+    <div class="col">
       <label class="form-label">College</label>
-      <input type="text" id="college-input" class="form-control" required>
-      <div class="invalid-feedback">
-        Please provide a valid college.
-      </div>
+      <input type="text" class="form-control" id="college-input" required>
+      <div class="invalid-feedback">Please provide a valid college.</div>
     </div>
 
-    <!-- Graduation Year -->
-    <div class="col-md-3">
+    <div class="col">
       <label class="form-label">Graduation Year</label>
       <select class="form-select" id="grad-year-select" required>
-  <option value="">Choose...</option>
-  <option>2020</option>
-  <option>2021</option>
-  <option>2022</option>
-  <option>2023</option>
-</select>
-      <div class="invalid-feedback">
-        Please select a valid Graduation Year.
-      </div>
+        <option value="">Choose...</option>
+        <option>2020</option>
+        <option>2021</option>
+        <option>2022</option>
+        <option>2023</option>
+      </select>
+      <div class="invalid-feedback">Please select a valid Graduation Year.</div>
     </div>
 
-    <!-- Roll No -->
-    <div class="col-md-3">
+    <div class="col">
       <label class="form-label">Roll No.</label>
-      <input type="text" id="roll-no-input" class="form-control" required>
-      <div class="invalid-feedback">
-        Please provide a valid Roll no.
-      </div>
+      <input type="number" class="form-control" id="roll-no-input" required>
+      <div class="invalid-feedback">Please provide a valid Roll no.</div>
     </div>
+  </div>
 
-    <!-- Terms -->
-    <div class="col-12">
-      <div class="form-check">
-        <input class="form-check-input" id="conditions-checkbox" type="checkbox" required>
-        <label class="form-check-label">
-          Agree to terms and conditions
-        </label>
-        <div class="invalid-feedback">
-          You must agree before submitting.
-        </div>
-      </div>
-    </div>
+  <div class="mb-3">
+    <input class="form-check-input" type="checkbox" id="conditions-checkbox" required>
+    <label class="form-check-label ms-1">Agree to terms and conditions</label>
+    <div class="invalid-feedback">You must agree before submitting.</div>
+  </div>
 
-    <!-- Submit -->
-    <div class="col-12">
-      <button class="btn btn-primary" type="submit">Submit form</button>
-    </div>
+  <button class="btn btn-primary" type="submit">Submit form</button>
+</form>
 
-  </form>
-</div>
-
-<!-- Bootstrap Validation Script -->
 <script>
-(() => {
-  const forms = document.querySelectorAll('.needs-validation');
-  Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
-      if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      form.classList.add('was-validated');
-    }, false);
-  });
-})();
+  (() => {
+    'use strict';
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) event.preventDefault();
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
 </script>
+
 
 </body>
 </html>
